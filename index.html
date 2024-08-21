@@ -118,7 +118,17 @@
             <div class="contact-main-text">Let's start a conversation!</div>
           </div>
           <div class="contact-container-right">
-            <form action="#" method="post" class="contact-form">
+            <form
+              action="https://api.web3forms.com/submit"
+              method="post"
+              class="contact-form"
+            >
+              <input
+                type="hidden"
+                name="access_key"
+                value="224d1318-9a48-46f0-9d1b-cd3cbfe56a64
+                "
+              />
               <div class="form-group">
                 <label for="name">Name</label>
                 <input
@@ -157,6 +167,11 @@
                   required
                 ></textarea>
               </div>
+              <input
+                type="hidden"
+                name="redirect"
+                value="https://web3forms.com/success"
+              />
               <button type="submit" class="submit-btn">Send message!</button>
             </form>
           </div>
