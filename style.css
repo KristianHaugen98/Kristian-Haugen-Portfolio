@@ -13,6 +13,7 @@
 
 nav {
   display: flex;
+  align-items: center;
   line-height: 1.6rem;
   margin: 0;
   padding: 1.5rem;
@@ -23,6 +24,7 @@ nav {
   position: fixed;
   top: 0;
   width: 97%;
+  z-index: 1000;
 }
 
 .nav-links {
@@ -59,12 +61,28 @@ nav {
   transform: scale(1.1);
 }
 
+.burger {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+}
+
+/* Sekjonen home */
+
 .home {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(/images/home.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  background-position: center;
 }
 
 .main-container {
@@ -149,29 +167,43 @@ nav {
   font-weight: bold;
   margin-bottom: 20px;
 }
+.om-meg {
+  margin-bottom: 1.5rem;
+}
 
 .link-text {
   font-size: 1.2rem;
-  color: blue;
-  text-decoration: underline;
+  text-decoration: none;
   cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: green;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  border-radius: 100px;
 }
 
 /* Services seksjone */
 
+.service-container {
+  margin: 5rem;
+  padding-top: 50px;
+}
+
 .little-service-text {
   font-size: 1rem;
-  margin: 20px 20px 20px;
   color: green;
   text-align: center;
+  margin-top: 50px;
 }
 
 .main-service-text {
   font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 20px;
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
+  margin-top: 10px;
 }
 
 .services-cards {
@@ -179,6 +211,7 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 100px;
+  margin-bottom: 50px;
 }
 
 .card {
@@ -217,15 +250,257 @@ nav {
   box-shadow: 0px 8px 16px rgb(0, 0, 0, 03);
 }
 
+/* Kontakt seksjonen */
+
+.contact {
+  padding: 6% 0;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-container-left {
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.contact-little-text {
+  font-size: 1rem;
+  color: green;
+  margin-bottom: 2rem;
+}
+
+.contact-main-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.contact-container-right {
+  flex: 1;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.submit-btn {
+  padding: 0.75rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: green;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: backround-color 0.3 ease;
+}
+
+.submit-btn:hover {
+  background-color: #004494;
+}
+
+/* Footer seksjonen */
+
+.footer {
+  background-color: #222;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footer-left {
+  flex: 1;
+}
+
+.footer-left h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-left p {
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+.social-links {
+  margin: 0;
+  text-align: left;
+}
+
+.social-links a {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #007bff;
+}
+
 /* Responsive design for mindre enheter: Seksjon OM */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in-out;
+    z-index: 1000;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+    position: center;
+  }
+
+  .burger {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .home-main-text {
+    font-size: 3rem;
+    padding-top: 2rem;
+  }
+
+  .first-text {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .scroll-button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+
+  .text-container {
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+
   .about-container {
     flex-direction: column;
     text-align: center;
+    padding-bottom: 5rem;
   }
   .container-right img {
     max-width: 80%;
     margin: 0 auto;
+  }
+
+  .container-left {
+    padding-top: 6rem;
+  }
+  /*  kontact seksjonen  */
+
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 5rem;
+  }
+  .contact-container-left {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+  .contact-form {
+    align-items: center;
+  }
+
+  /* Footer seksjonen */
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-right {
+    margin-bottom: 1rem;
+  }
+
+  .footer-links,
+  .social-links {
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li .social-links li {
+    margin-bottom: 0.5rem;
   }
 }

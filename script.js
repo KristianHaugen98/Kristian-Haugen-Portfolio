@@ -10,3 +10,11 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
+
+const burger = document.querySelector(".burger");
+const navLinks = document.querySelector(".nav-links");
+
+burger.addEventListener("click", () => {
+  console.log("Burger menu clicked!");
+  navLinks.classList.toggle("open");
+});
