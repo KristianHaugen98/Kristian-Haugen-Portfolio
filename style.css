@@ -416,6 +416,12 @@ nav {
   color: #007bff;
 }
 
+.last-modified {
+  text-align: left;
+  padding: 10px;
+  padding-left: 100px;
+}
+
 /* Responsive design for mindre enheter: Seksjon OM */
 
 @media screen and (max-width: 768px) {
