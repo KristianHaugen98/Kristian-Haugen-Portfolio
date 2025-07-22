@@ -5,10 +5,33 @@
   scroll-behavior: smooth;
 }
 
+/* Lys modus */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Mørk modus */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+#theme-mode {
+  display: flex;
+  font-size: 30px;
+  border-style: none;
+  background-color: transparent;
+}
+
 .main-title {
   font-size: 1.6rem;
   font-weight: 500;
   margin-left: 2rem;
+}
+
+h3.main-title {
+  color: black;
 }
 
 nav {
@@ -192,14 +215,11 @@ nav {
 }
 
 /* basic seksjonen */
-.basic {
-  background-color: lightblue;
-}
 
 /* Services seksjone */
 
 .service-container {
-  margin: 5rem;
+  margin: 5.6rem;
   padding-top: 50px;
 }
 
@@ -440,6 +460,11 @@ nav {
     z-index: 1000;
   }
 
+  #theme-mode {
+    font-size: 20px;
+    padding: 5px;
+  }
+
   .nav-links.open {
     transform: translateX(0);
     position: center;
@@ -477,7 +502,7 @@ nav {
     padding-bottom: 5rem;
   }
   .container-right img {
-    max-width: 80%;
+    max-width: 100%;
     margin: 0 auto;
   }
 
@@ -497,6 +522,11 @@ nav {
   }
   .contact-form {
     align-items: center;
+  }
+
+  .contact-container-right {
+    padding-right: 1.6rem;
+    margin-bottom: 2rem;
   }
 
   /* Footer seksjonen */
